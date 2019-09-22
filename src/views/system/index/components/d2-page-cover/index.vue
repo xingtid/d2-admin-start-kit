@@ -1,7 +1,5 @@
 <template>
   <div class="d2-page-cover">
-    <div class="d2-page-cover__logo">
-    </div>
   </div>
 </template>
 
