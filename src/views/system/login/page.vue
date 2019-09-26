@@ -112,8 +112,8 @@ export default {
       ],
       // 表单
       formLogin: {
-        username: 'tid',
-        password: '123'
+        username: 'admin',
+        password: 'admin'
       },
       // 表单校验
       rules: {

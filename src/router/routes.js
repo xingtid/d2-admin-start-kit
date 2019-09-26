@@ -35,7 +35,7 @@ const frameIn = [
         path: 'page2',
         name: 'page2',
         meta: {
-          title: '页面 2',
+          title: '会员管理',
           auth: true
         },
         component: _import('demo/page2')
@@ -44,10 +44,19 @@ const frameIn = [
         path: 'page3',
         name: 'page3',
         meta: {
-          title: '页面 3',
+          title: '文章管理',
           auth: true
         },
         component: _import('demo/page3')
+      },
+      {
+        path: 'total',
+        name: 'total',
+        meta: {
+          title: '数据统计',
+          auth: true
+        },
+        component: _import('total')
       },
       // 系统 前端日志
       {

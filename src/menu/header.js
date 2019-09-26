@@ -2,12 +2,17 @@
 export default [
   { path: '/index', title: '首页', icon: 'home' },
   {
-    title: '页面',
+    title: '管理',
     icon: 'folder-o',
     children: [
-      { path: '/page1', title: '用户管理' },
-      { path: '/page2', title: '页面 2' },
-      { path: '/page3', title: '页面 3' }
+      {icon: 'address-card-o', path: '/page1', title: '用户管理' },
+      { icon: 'user ',path: '/page2', title: '会员管理' },
+      {icon: 'reorder ', path: '/page3', title: '文章管理' }
     ]
+  },
+  {
+    title: '数据统计',
+    icon: 'line-chart ',
+    path: '/total'
   }
 ]
