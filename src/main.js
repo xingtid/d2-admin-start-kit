@@ -11,10 +11,14 @@ import router from './router'
 import menuHeader from '@/menu/header'
 import menuAside from '@/menu/aside'
 import { frameInRoutes } from '@/router/routes'
+import moment from 'moment'
 
 // 核心插件
 Vue.use(d2Admin)
 
+Vue.filter('dateformat', function (dataStr, pattern = 'YYYY-MM-DD HH:mm:ss') {
+  return moment(dataStr).format(pattern)
+})
 new Vue({
   router,
   store,
