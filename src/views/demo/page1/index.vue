@@ -50,7 +50,7 @@
                 <template slot-scope="scope">
                     <el-button
                             size="mini"
-                            @click="handleEdit(scope.index, scope.row)">编辑
+                            @click="editInfo(scope.index)">编辑
                     </el-button>
                     <el-button
                             @click="delInfo(scope.index)"
@@ -62,6 +62,17 @@
             </el-table-column>
 
         </el-table>
+
+        <el-dialog
+                title="提示"
+                :visible.sync="visible"
+                width="30%"
+                :before-close="handleClose">
+            <span slot="footer" class="dialog-footer">
+    <el-button @click="visible = false">取 消</el-button>
+    <el-button type="primary" @click="visible = false">确 定</el-button>
+  </span>
+        </el-dialog>
 
         <el-dialog
                 title="提示"
@@ -106,6 +117,10 @@ export default {
     delInfo (index) {
       this.id = index
       this.dialogVisible = true
+    },
+    editInfo (index) {
+      this.id = index
+      this.visible = true
     },
     del () {
       axios.get('/login/deluser', {

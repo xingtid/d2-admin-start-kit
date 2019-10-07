@@ -12,10 +12,10 @@ import menuHeader from '@/menu/header'
 import menuAside from '@/menu/aside'
 import { frameInRoutes } from '@/router/routes'
 import moment from 'moment'
-
+import SplitPane from 'vue-splitpane'
 // 核心插件
 Vue.use(d2Admin)
-
+Vue.component('SplitPane', SplitPane)
 Vue.filter('dateformat', function (dataStr, pattern = 'YYYY-MM-DD HH:mm:ss') {
   return moment(dataStr).format(pattern)
 })

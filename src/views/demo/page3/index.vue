@@ -47,11 +47,11 @@
         </template>
       </el-table-column>
       <el-table-column
-              label="时间"
+              label="点赞数"
               width="220">
         <i class="el-icon-time"></i>
         <template slot-scope="scope">
-          <span style="margin-left: 10px">{{ scope.row.sTime| dateformat('YYYY-MM-DD HH:mm:ss')}}</span>
+          <span style="margin-left: 10px">{{ scope.row.sGetClick}}</span>
         </template>
       </el-table-column>
       <el-table-column label="操作">

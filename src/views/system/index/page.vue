@@ -1,47 +1,45 @@
 <template>
-  <d2-container class="page">
-    <d2-page-cover>
+  <d2-container type="card">
+    <div style="height: 700px; margin: -16px;">
+      <SplitPane :min-percent='20' :default-percent='30' split="vertical">
+        <template slot="paneL"><div style="margin: 10px;text-align: center;">
+          <el-tag>我的信息</el-tag>
+        </div></template>
+        <template slot="paneR">
+          <SplitPane split="horizontal">
+            <template slot="paneL"><div style="margin: 10px;">
 
-    </d2-page-cover>
+            </div></template>
+            <template slot="paneR"><div style="margin: 10px;">
+
+
+            </div></template>
+          </SplitPane>
+        </template>
+      </SplitPane>
+    </div>
   </d2-container>
 </template>
 
 <script>
-import D2HelpBtn from './components/d2-help-btn'
-import D2Badge from './components/d2-badge'
-import D2PageCover from './components/d2-page-cover'
-export default {
-  components: {
-
-    D2PageCover
-  },
-  data () {
-    return {
-      filename: __filename
+  export default {
+    mounted () {
+      // 加载完成后显示提示
+      this.showInfo()
+    },
+    methods: {
+      // 显示提示
+      showInfo () {
+        this.$notify({
+          title: '提示',
+          message: '在横向或者纵向的分割线上拖拽调整分区大小'
+        })
+      }
     }
   }
-}
 </script>
 
 <style lang="scss" scoped>
-.page {
-  .logo {
-    width: 120px;
-  }
-  .btn-group {
-    color: $color-text-placehoder;
-    font-size: 12px;
-    margin-top: 0px;
-    margin-bottom: 20px;
-    .btn-group__btn {
-      color: $color-text-sub;
-      &:hover {
-        color: $color-text-main;
-      }
-      &.btn-group__btn--link {
-        color: $color-primary;
-      }
-    }
-  }
-}
+
 </style>
+

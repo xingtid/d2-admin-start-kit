@@ -31,7 +31,8 @@
     "ua-parser-js": "^0.7.19",
     "vue": "^2.6.10",
     "vue-router": "^3.0.3",
-    "vuex": "^3.0.1"
+    "vuex": "^3.0.1",
+    "vue-splitpane": "^1.0.4"
   },
   "devDependencies": {
     "@kazupon/vue-i18n-loader": "^0.4.1",
