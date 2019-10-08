@@ -12,7 +12,7 @@ export default [
   },
   {
     title: '数据统计',
-    icon: 'folder-o',
+    icon: 'line-chart ',
    path: '/total'
   }
 ]

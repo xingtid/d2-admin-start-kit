@@ -31,7 +31,7 @@
                 <template slot-scope="scope">
                     <el-popover trigger="hover" placement="top">
                         <p>姓名: {{ scope.row.uname }}</p>
-                        <p>住址: {{ scope.row.uPhone }}</p>
+                        <p>ip: {{ scope.row.uip }}</p>
                         <div slot="reference" class="name-wrapper">
                             <el-tag size="medium">{{ scope.row.uname }}</el-tag>
                         </div>
@@ -49,10 +49,6 @@
             <el-table-column label="操作">
                 <template slot-scope="scope">
                     <el-button
-                            size="mini"
-                            @click="editInfo(scope.index)">编辑
-                    </el-button>
-                    <el-button
                             @click="delInfo(scope.index)"
                             slot="reference"
                             size="mini"
@@ -62,17 +58,6 @@
             </el-table-column>
 
         </el-table>
-
-        <el-dialog
-                title="提示"
-                :visible.sync="visible"
-                width="30%"
-                :before-close="handleClose">
-            <span slot="footer" class="dialog-footer">
-    <el-button @click="visible = false">取 消</el-button>
-    <el-button type="primary" @click="visible = false">确 定</el-button>
-  </span>
-        </el-dialog>
 
         <el-dialog
                 title="提示"
