@@ -14,5 +14,13 @@ export default [
     title: '数据统计',
     icon: 'line-chart ',
    path: '/total'
+  },
+  {
+    title: '设计师',
+    icon: 'folder-o',
+    children: [
+      {icon: 'address-card-o', path: '/design1', title: '设计师管理' },
+      { icon: 'user ',path: '/design2', title: '设计师审批' },
+    ]
   }
 ]

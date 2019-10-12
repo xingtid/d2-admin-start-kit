@@ -12,7 +12,7 @@ import menuHeader from '@/menu/header'
 import menuAside from '@/menu/aside'
 import { frameInRoutes } from '@/router/routes'
 import moment from 'moment'
-
+import { CountUp } from 'countup.js'
 // [ 可选组件 ] 网格布局
 import { GridLayout, GridItem } from 'vue-grid-layout'
 // 核心插件

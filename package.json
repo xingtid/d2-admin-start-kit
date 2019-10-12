@@ -33,7 +33,8 @@
     "vue-router": "^3.0.3",
     "vuex": "^3.0.1",
     "vue-splitpane": "^1.0.4",
-    "vue-grid-layout": "^2.3.4"
+    "vue-grid-layout": "^2.3.4",
+    "countup.js": "^2.0.4"
   },
   "devDependencies": {
     "@kazupon/vue-i18n-loader": "^0.4.1",

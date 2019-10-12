@@ -21,6 +21,24 @@ const frameIn = [
         },
         component: _import('system/index')
       },
+      {
+        path: 'design1',
+        name: 'design1',
+        meta: {
+          title: '设计师管理',
+          auth: true
+        },
+        component: _import('design/page1')
+      },
+      {
+        path: 'design2',
+        name: 'design2',
+        meta: {
+          title: '设计师管理',
+          auth: true
+        },
+        component: _import('design/page2')
+      },
       // 演示页面
       {
         path: 'page1',
