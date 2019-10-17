@@ -16,6 +16,11 @@ export default [
    path: '/total'
   },
   {
+    title: '发送消息',
+    icon: 'line-chart ',
+    path: '/sendmsg'
+  },
+  {
     title: '设计师',
     icon: 'folder-o',
     children: [

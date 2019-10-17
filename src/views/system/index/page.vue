@@ -16,9 +16,7 @@
                     <template v-if="item.i === '0'">
                         <el-tag size="mini" type="info" slot="header">今日打卡</el-tag>
                         <div class="d2-mb"><span style="padding: 5px;color: blue;">{{gettime}}</span></div>
-                        <div class="d2-mb">
-                            <el-button>点击签到</el-button>
-                        </div>
+
                     </template>
                     <template v-if="item.i === '1'">
                         <el-tag size="" type="info" slot="header"></el-tag>
@@ -44,7 +42,7 @@
                                     <p slot="title"></p>
                                     <div class="group" >
                                         <div >会员数</div>
-                                        <d2-count-up :start="124" :end="100"/>
+                                        <d2-count-up :start="count1" :end="100"/>
                                     </div>
                                 </el-card>
                             </el-col>
@@ -53,7 +51,7 @@
                                     <p slot="title">设置起止数值</p>
                                     <div class="group" >
                                         <div>文章数</div>
-                                        <d2-count-up :start="124" :end="100"/>
+                                        <d2-count-up :start="count2" :end="100"/>
                                     </div>
                                 </el-card>
                             </el-col>
@@ -62,7 +60,7 @@
                                     <p slot="title">设置起止数值</p>
                                     <div class="group">
                                         <div>设计师数 </div>
-                                        <d2-count-up :start="124" :end="100"/>
+                                        <d2-count-up :start="count3" :end="100"/>
                                     </div>
                                 </el-card>
                             </el-col>
@@ -78,6 +76,7 @@
 </template>
 
 <script>
+    import axios from 'axios'
     export default {
         data() {
             return {
@@ -96,8 +95,12 @@
                     isMirrored: false,
                     verticalCompact: true,
                     margin: [10, 10],
-                    useCssTransforms: true
+                    useCssTransforms: true,
+
                 },
+                count1: 1,
+                count2: 1,
+                count3: 1,
                 gettime: '',
                 urls: [
                     'https://fuss10.elemecdn.com/a/3f/3302e58f9a181d2509f3dc0fa68b0jpeg.jpeg',
@@ -114,9 +117,21 @@
         mounted() {
             // 加载完成后显示提示
             this.showInfo()
-            this.currentTime();
+            this.currentTime()
+            this.getCount()
         },
         methods: {
+            getCount(){
+                axios.get('/login/count'
+                ).then(res => {
+                    console.log(res.data)
+                    this.count1 = res.data.data.vipCount
+                    this.count2 = res.data.data.shareCount
+                    this.count3 = res.data.data.designCount
+                }).catch(error => {
+                    console.log(error)
+                })
+            },
             getTime: function () {
                 var _this = this;
                 let yy = new Date().getFullYear();

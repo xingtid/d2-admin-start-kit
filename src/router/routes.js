@@ -34,7 +34,7 @@ const frameIn = [
         path: 'design2',
         name: 'design2',
         meta: {
-          title: '设计师管理',
+          title: '设计师审批',
           auth: true
         },
         component: _import('design/page2')
@@ -75,6 +75,15 @@ const frameIn = [
           auth: true
         },
         component: _import('total')
+      },
+      {
+        path: 'sendmsg',
+        name: 'sendmsg',
+        meta: {
+          title: '发送消息',
+          auth: true
+        },
+        component: _import('sendmsg')
       },
       // 系统 前端日志
       {
